@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  height: 100vh;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 1;
+  height: 100%;
+}
+
+.imageContainer img {
+  width: auto;
+  height: 100%;
+}
+.welcomeText {
+  font-family: "Arial", sans-serif;
+  font-size: 54px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-right: 20px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Hide overflow for typewriter animation */
+  white-space: nowrap; /* Prevent text wrapping */
+  animation: typewriter 3s steps(40) forwards; /* Typewriter animation */
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
