@@ -9,11 +9,9 @@ import TextEditor from "./TextEditor";
 import Login from "./pages/login.js";
 import Dashboard from "./pages/dashboard.js";
 import { v4 as uuidV4 } from "uuid";
-
 function App() {
   // Generate a UUID
   const fullUuid = uuidV4();
-
   // Truncate the UUID to desired length
   const shortUuid = fullUuid.replace(/-/g, "").substring(0, 24);
 

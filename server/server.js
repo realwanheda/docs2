@@ -55,7 +55,11 @@ io.on("connection", (socket) => {
     socket.join(documentId);
     socket.emit("load-document", document);
     socket.on("send-changes", (delta) => {
-      socket.broadcast.to(documentId).emit("receive-changes", delta);
+      // Assuming you have stored the username in the socket session
+      const username = socket.username;
+      socket.broadcast
+        .to(documentId)
+        .emit("receive-changes", { delta, username });
     });
     socket.on("save-document", async (data, title) => {
       await Document.findByIdAndUpdate(

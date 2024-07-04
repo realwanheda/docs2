@@ -9,8 +9,6 @@ export const deleteDocument = async (req, res) => {
     if (!deletedDocument) {
       return res.status(404).json({ message: "Document not found" });
     }
-
-    // Remove the document reference from the users table
     const users = await User.updateMany(
       { documents: id },
       { $pull: { documents: id } }
